@@ -1,0 +1,93 @@
+:root {
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --accent-color: #2563eb;
+  --accent-hover: #1d4ed8;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --error-color: #ef4444;
+  --success-color: #22c55e;
+  --border-color: #334155;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.auth-container { width: 100%; max-width: 420px; padding: 20px; }
+
+.auth-card {
+  background-color: var(--card-bg);
+  padding: 32px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 4px; }
+.subtitle { color: var(--text-muted); font-size: 0.875rem; margin-bottom: 24px; }
+
+.form-group { margin-bottom: 20px; }
+label { display: block; font-size: 0.875rem; margin-bottom: 8px; color: var(--text-muted); }
+
+input {
+  width: 100%;
+  padding: 10px 14px;
+  background-color: #0f172a;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-main);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input:focus { border-color: var(--accent-color); }
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button:hover { background-color: var(--accent-hover); }
+button:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.alert {
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  margin-bottom: 20px;
+}
+.alert.error { background-color: rgba(239, 68, 68, 0.15); color: var(--error-color); border: 1px solid var(--error-color); }
+.alert.success { background-color: rgba(34, 197, 94, 0.15); color: var(--success-color); border: 1px solid var(--success-color); }
+
+.hidden { display: none !important; }
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ffffff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
